@@ -7,7 +7,7 @@
 //
 
 #import "MFlowLayOut.h"
-
+#import "MHeaderImaCell.h"
 @implementation MFlowLayOut
 
 /*
@@ -17,5 +17,30 @@
     // Drawing code
 }
 */
+- (NSArray *) layoutAttributesForElementsInRect:(CGRect)rect {
+    
+    
+    NSArray *arr = [super layoutAttributesForElementsInRect:rect];
+    
+    
+    for (UICollectionViewLayoutAttributes *att in arr) {
+        if (att.representedElementCategory == UICollectionElementCategoryCell) {
+            MHeaderImaCell *cell = (MHeaderImaCell *)[self.collectionView cellForItemAtIndexPath:att.indexPath];
+            
+            float offSet_x = fabs(self.collectionView.contentOffset.x - (att.frame.origin.x - CGRectGetWidth(self.collectionView.frame)));
+            CGRect cellRect  = cell.btnCheckMark.frame;
+            cellRect.origin.x = MIN(offSet_x>MHeaderImaCellBtn_width?offSet_x-MHeaderImaCellBtn_width:0, fabs(CGRectGetWidth(att.frame) - CGRectGetWidth(cell.btnCheckMark.frame)));
+            cell.btnCheckMark.frame = cellRect;
+            NSLog(@"%f %f",cellRect.origin.x,self.collectionView.contentOffset.x);
+        }
+    }
+    
+    return arr;
+}
+
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
+
+    return YES;
+}
 
 @end

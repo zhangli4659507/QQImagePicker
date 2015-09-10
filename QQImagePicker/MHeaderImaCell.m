@@ -13,8 +13,8 @@
     
     if (self = [super initWithFrame:frame]) {
         self.btnCheckMark = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.btnCheckMark.frame = CGRectMake(CGRectGetWidth(self.frame)-MHeaderImaCellBtn_width, MHeaderImaCellBtn_x_space, MHeaderImaCellBtn_width, MHeaderImaCellBtn_width);
-        [self.btnCheckMark setBackgroundColor:[UIColor greenColor]];
+        self.btnCheckMark.frame = CGRectMake(CGRectGetWidth(self.frame)-MHeaderImaCellBtn_width, 0, MHeaderImaCellBtn_width, MHeaderImaCellBtn_width);
+//        [self.btnCheckMark setBackgroundColor:[UIColor greenColor]];
         [self addSubview:self.btnCheckMark];
         
         [self.btnCheckMark setImage:[UIImage imageNamed:@"ico_check_red"] forState:UIControlStateSelected];

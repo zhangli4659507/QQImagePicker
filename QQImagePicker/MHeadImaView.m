@@ -23,10 +23,14 @@
         MFlowLayOut *flowLayout = [[MFlowLayOut alloc] init];
         flowLayout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
         flowLayout.minimumInteritemSpacing = 5;
+        flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         
         self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flowLayout];
+        self.collectionView.backgroundColor = [UIColor whiteColor];
         self.collectionView.delegate = self;
         self.collectionView.dataSource = self;
+        self.collectionView.showsHorizontalScrollIndicator = NO;
+        self.collectionView.showsVerticalScrollIndicator = NO;
         [self addSubview:self.collectionView];
         [self.collectionView registerClass:[MHeaderImaCell class] forCellWithReuseIdentifier:MHeaderImaCellClassName];
     }
@@ -38,10 +42,10 @@
     return 20;
 }
 
-
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
     MHeaderImaCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MHeaderImaCellClassName forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor grayColor];
     
     return cell;
 }

@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-
+#import <AssetsLibrary/AssetsLibrary.h>
+#import "MMenuView.h"
 @interface ViewController ()
 
 @end
@@ -16,6 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    MMenuView *mm = [[MMenuView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 350, CGRectGetWidth(self.view.bounds), 350)];
+    [self.view addSubview:mm];
     // Do any additional setup after loading the view, typically from a nib.
 }
 

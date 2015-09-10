@@ -18,6 +18,7 @@
 		4D5792FA1BA175A500A45D85 /* MMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5792F91BA175A500A45D85 /* MMenuView.m */; };
 		4D5792FD1BA17A8700A45D85 /* MHeadImaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5792FC1BA17A8700A45D85 /* MHeadImaView.m */; };
 		4D5793001BA17B0100A45D85 /* MFlowLayOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5792FF1BA17B0100A45D85 /* MFlowLayOut.m */; };
+		4D5793021BA17F5300A45D85 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5793011BA17F5300A45D85 /* AssetsLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		4D5792FC1BA17A8700A45D85 /* MHeadImaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHeadImaView.m; sourceTree = "<group>"; };
 		4D5792FE1BA17B0100A45D85 /* MFlowLayOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFlowLayOut.h; sourceTree = "<group>"; };
 		4D5792FF1BA17B0100A45D85 /* MFlowLayOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFlowLayOut.m; sourceTree = "<group>"; };
+		4D5793011BA17F5300A45D85 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D5793021BA17F5300A45D85 /* AssetsLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +78,7 @@
 		4D5792C21BA1726B00A45D85 = {
 			isa = PBXGroup;
 			children = (
+				4D5793011BA17F5300A45D85 /* AssetsLibrary.framework */,
 				4D5792CD1BA1726B00A45D85 /* QQImagePicker */,
 				4D5792E71BA1726C00A45D85 /* QQImagePickerTests */,
 				4D5792CC1BA1726B00A45D85 /* Products */,
@@ -448,6 +452,7 @@
 				4D5792F01BA1726C00A45D85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D5792F11BA1726C00A45D85 /* Build configuration list for PBXNativeTarget "QQImagePickerTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +461,7 @@
 				4D5792F31BA1726C00A45D85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
