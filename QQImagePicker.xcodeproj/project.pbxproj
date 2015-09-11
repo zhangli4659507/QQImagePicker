@@ -15,10 +15,17 @@
 		4D5792DF1BA1726C00A45D85 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5792DD1BA1726C00A45D85 /* LaunchScreen.xib */; };
 		4D5792EB1BA1726C00A45D85 /* QQImagePickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5792EA1BA1726C00A45D85 /* QQImagePickerTests.m */; };
 		4D5792F71BA172C900A45D85 /* MHeaderImaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5792F61BA172C900A45D85 /* MHeaderImaCell.m */; };
-		4D5792FA1BA175A500A45D85 /* MMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5792F91BA175A500A45D85 /* MMenuView.m */; };
 		4D5792FD1BA17A8700A45D85 /* MHeadImaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5792FC1BA17A8700A45D85 /* MHeadImaView.m */; };
 		4D5793001BA17B0100A45D85 /* MFlowLayOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5792FF1BA17B0100A45D85 /* MFlowLayOut.m */; };
 		4D5793021BA17F5300A45D85 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5793011BA17F5300A45D85 /* AssetsLibrary.framework */; };
+		4DF2C0671BA25F2F00B361F8 /* MMenuVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2C0661BA25F2F00B361F8 /* MMenuVc.m */; };
+		4DF2C06D1BA2725C00B361F8 /* MImaLibTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2C06C1BA2725C00B361F8 /* MImaLibTool.m */; };
+		4DF2C0711BA2844300B361F8 /* MShowAllGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2C0701BA2844300B361F8 /* MShowAllGroup.m */; };
+		4DF2C0751BA285F100B361F8 /* MGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2C0731BA285F100B361F8 /* MGroupCell.m */; };
+		4DF2C0761BA285F100B361F8 /* MGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DF2C0741BA285F100B361F8 /* MGroupCell.xib */; };
+		4DF2C0791BA2AC8900B361F8 /* MShowGroupAllSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2C0781BA2AC8900B361F8 /* MShowGroupAllSet.m */; };
+		4DF2C07D1BA2AEE400B361F8 /* MImaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2C07B1BA2AEE400B361F8 /* MImaCell.m */; };
+		4DF2C07E1BA2AEE400B361F8 /* MImaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DF2C07C1BA2AEE400B361F8 /* MImaCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,13 +54,26 @@
 		4D5792EA1BA1726C00A45D85 /* QQImagePickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQImagePickerTests.m; sourceTree = "<group>"; };
 		4D5792F51BA172C900A45D85 /* MHeaderImaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHeaderImaCell.h; sourceTree = "<group>"; };
 		4D5792F61BA172C900A45D85 /* MHeaderImaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHeaderImaCell.m; sourceTree = "<group>"; };
-		4D5792F81BA175A500A45D85 /* MMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMenuView.h; sourceTree = "<group>"; };
-		4D5792F91BA175A500A45D85 /* MMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMenuView.m; sourceTree = "<group>"; };
 		4D5792FB1BA17A8700A45D85 /* MHeadImaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHeadImaView.h; sourceTree = "<group>"; };
 		4D5792FC1BA17A8700A45D85 /* MHeadImaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHeadImaView.m; sourceTree = "<group>"; };
 		4D5792FE1BA17B0100A45D85 /* MFlowLayOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFlowLayOut.h; sourceTree = "<group>"; };
 		4D5792FF1BA17B0100A45D85 /* MFlowLayOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFlowLayOut.m; sourceTree = "<group>"; };
 		4D5793011BA17F5300A45D85 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		4DF2C0651BA25F2F00B361F8 /* MMenuVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMenuVc.h; sourceTree = "<group>"; };
+		4DF2C0661BA25F2F00B361F8 /* MMenuVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMenuVc.m; sourceTree = "<group>"; };
+		4DF2C06B1BA2725C00B361F8 /* MImaLibTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MImaLibTool.h; sourceTree = "<group>"; };
+		4DF2C06C1BA2725C00B361F8 /* MImaLibTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MImaLibTool.m; sourceTree = "<group>"; };
+		4DF2C06E1BA27CFB00B361F8 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		4DF2C06F1BA2844300B361F8 /* MShowAllGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MShowAllGroup.h; sourceTree = "<group>"; };
+		4DF2C0701BA2844300B361F8 /* MShowAllGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MShowAllGroup.m; sourceTree = "<group>"; };
+		4DF2C0721BA285F100B361F8 /* MGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGroupCell.h; sourceTree = "<group>"; };
+		4DF2C0731BA285F100B361F8 /* MGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGroupCell.m; sourceTree = "<group>"; };
+		4DF2C0741BA285F100B361F8 /* MGroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGroupCell.xib; sourceTree = "<group>"; };
+		4DF2C0771BA2AC8900B361F8 /* MShowGroupAllSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MShowGroupAllSet.h; sourceTree = "<group>"; };
+		4DF2C0781BA2AC8900B361F8 /* MShowGroupAllSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MShowGroupAllSet.m; sourceTree = "<group>"; };
+		4DF2C07A1BA2AEE400B361F8 /* MImaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MImaCell.h; sourceTree = "<group>"; };
+		4DF2C07B1BA2AEE400B361F8 /* MImaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MImaCell.m; sourceTree = "<group>"; };
+		4DF2C07C1BA2AEE400B361F8 /* MImaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MImaCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +119,23 @@
 			children = (
 				4D5792D21BA1726C00A45D85 /* AppDelegate.h */,
 				4D5792D31BA1726C00A45D85 /* AppDelegate.m */,
+				4DF2C06E1BA27CFB00B361F8 /* Define.h */,
 				4D5792D51BA1726C00A45D85 /* ViewController.h */,
 				4D5792D61BA1726C00A45D85 /* ViewController.m */,
-				4D5792F81BA175A500A45D85 /* MMenuView.h */,
-				4D5792F91BA175A500A45D85 /* MMenuView.m */,
+				4DF2C0651BA25F2F00B361F8 /* MMenuVc.h */,
+				4DF2C0661BA25F2F00B361F8 /* MMenuVc.m */,
+				4DF2C06F1BA2844300B361F8 /* MShowAllGroup.h */,
+				4DF2C0701BA2844300B361F8 /* MShowAllGroup.m */,
+				4DF2C0771BA2AC8900B361F8 /* MShowGroupAllSet.h */,
+				4DF2C0781BA2AC8900B361F8 /* MShowGroupAllSet.m */,
+				4DF2C07A1BA2AEE400B361F8 /* MImaCell.h */,
+				4DF2C07B1BA2AEE400B361F8 /* MImaCell.m */,
+				4DF2C07C1BA2AEE400B361F8 /* MImaCell.xib */,
+				4DF2C0721BA285F100B361F8 /* MGroupCell.h */,
+				4DF2C0731BA285F100B361F8 /* MGroupCell.m */,
+				4DF2C0741BA285F100B361F8 /* MGroupCell.xib */,
+				4DF2C06B1BA2725C00B361F8 /* MImaLibTool.h */,
+				4DF2C06C1BA2725C00B361F8 /* MImaLibTool.m */,
 				4D5792F41BA1728500A45D85 /* collectionViewInfo */,
 				4D5792D81BA1726C00A45D85 /* Main.storyboard */,
 				4D5792DB1BA1726C00A45D85 /* Images.xcassets */,
@@ -232,8 +265,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D5792DA1BA1726C00A45D85 /* Main.storyboard in Resources */,
+				4DF2C0761BA285F100B361F8 /* MGroupCell.xib in Resources */,
 				4D5792DF1BA1726C00A45D85 /* LaunchScreen.xib in Resources */,
 				4D5792DC1BA1726C00A45D85 /* Images.xcassets in Resources */,
+				4DF2C07E1BA2AEE400B361F8 /* MImaCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,12 +287,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D5792F71BA172C900A45D85 /* MHeaderImaCell.m in Sources */,
-				4D5792FA1BA175A500A45D85 /* MMenuView.m in Sources */,
+				4DF2C07D1BA2AEE400B361F8 /* MImaCell.m in Sources */,
+				4DF2C0711BA2844300B361F8 /* MShowAllGroup.m in Sources */,
+				4DF2C06D1BA2725C00B361F8 /* MImaLibTool.m in Sources */,
+				4DF2C0791BA2AC8900B361F8 /* MShowGroupAllSet.m in Sources */,
 				4D5792FD1BA17A8700A45D85 /* MHeadImaView.m in Sources */,
 				4D5792D71BA1726C00A45D85 /* ViewController.m in Sources */,
+				4DF2C0751BA285F100B361F8 /* MGroupCell.m in Sources */,
 				4D5792D41BA1726C00A45D85 /* AppDelegate.m in Sources */,
 				4D5792D11BA1726C00A45D85 /* main.m in Sources */,
 				4D5793001BA17B0100A45D85 /* MFlowLayOut.m in Sources */,
+				4DF2C0671BA25F2F00B361F8 /* MMenuVc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

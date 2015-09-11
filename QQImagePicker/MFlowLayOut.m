@@ -31,7 +31,7 @@
             CGRect cellRect  = cell.btnCheckMark.frame;
             cellRect.origin.x = MIN(offSet_x>MHeaderImaCellBtn_width?offSet_x-MHeaderImaCellBtn_width:0, fabs(CGRectGetWidth(att.frame) - CGRectGetWidth(cell.btnCheckMark.frame)));
             cell.btnCheckMark.frame = cellRect;
-            NSLog(@"%f %f",cellRect.origin.x,self.collectionView.contentOffset.x);
+//            NSLog(@"%f %f",cellRect.origin.x,self.collectionView.contentOffset.x);
         }
     }
     
