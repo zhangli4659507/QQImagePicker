@@ -76,8 +76,8 @@
         if (state) {
             [self.arrSelected addObject:set];
         } else {
-            NSPredicate *pre = [NSPredicate predicateWithFormat:@" SELF.defaultRepresentation.UTI == %@",set.defaultRepresentation.UTI];
-            NSArray *arr = [self.arrSelected filteredArrayUsingPredicate:pre];
+           
+            NSArray *arr = [[MImaLibTool shareMImaLibTool] checkMarkSameSetWithArr:self.arrSelected set:set];
             if (arr.count > 0) {
                 [self.arrSelected removeObject:[arr firstObject]];
             }

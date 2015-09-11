@@ -8,11 +8,14 @@
 
 #import "MShowBigImaVc.h"
 #import "MImaCell.h"
+#import "MImaLibTool.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 @interface MShowBigImaVc ()<UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, strong) NSMutableArray *arrSelected;
 @property (nonatomic, strong) NSArray *arrData;
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, weak) UIButton *btnCheckMark;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 @end
 
 @implementation MShowBigImaVc
@@ -48,7 +51,32 @@
         self.navigationItem.leftBarButtonItem = rightBar;
     }
     
+    self.btnCheckMark = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.btnCheckMark.frame = CGRectMake(0, 0, 40, 40);
+    [self.btnCheckMark addTarget:self action:@selector(actionBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.btnCheckMark setImage:[UIImage imageNamed:@"ico_check_red"] forState:UIControlStateSelected];
+    [self.btnCheckMark setImage:[UIImage imageNamed:@"ico_check_nomal"] forState:UIControlStateNormal];
+    
+    
+    UIBarButtonItem *rbar = [[UIBarButtonItem alloc] initWithCustomView:self.btnCheckMark];
+    self.navigationItem.rightBarButtonItem = rbar;
+    
     // Do any additional setup after loading the view.
+}
+
+- (void)actionBtn:(UIButton *)btn {
+
+    btn.selected = !btn.selected;
+    if (btn.selected) {
+        
+        [self.arrSelected addObject:self.arrData[self.indexPath.row]];
+    } else {
+    
+        NSArray *arr = [[MImaLibTool shareMImaLibTool] checkMarkSameSetWithArr:self.arrSelected set:self.arrData[self.indexPath.row]];
+        if (arr.count > 0) {
+            [self.arrSelected removeObject:[arr firstObject]];
+        }
+    }
 }
 
 - (void)actionRightBar {
@@ -68,6 +96,8 @@
     cell.imavHead.contentMode = UIViewContentModeScaleAspectFit;
     ALAsset *set = self.arrData[indexPath.row];
     cell.imavHead.image = [UIImage imageWithCGImage:[[set defaultRepresentation] fullScreenImage]];
+    self.btnCheckMark.selected = [[MImaLibTool shareMImaLibTool] imaInArrImasWithArr:self.arrSelected set:set];
+    self.indexPath = indexPath;
     return cell;
     
 }

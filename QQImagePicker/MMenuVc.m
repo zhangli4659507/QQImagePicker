@@ -75,11 +75,6 @@
     
  
       NSArray *arrIma = [[MImaLibTool shareMImaLibTool] getAllAssetsWithGroup:[self.arrGroup firstObject]];
-    
-    for (ALAsset *set in arrIma) {
-        NSLog(@"UTI = %@",set.defaultRepresentation.url.absoluteString);
-    }
-    
       if (arrIma.count > 0) {
           MHeadImaView *headView = [[MHeadImaView alloc] initWithFrame:CGRectMake(0, 9, CGRectGetWidth(self.view.bounds), 200)];
           [headView reloadDataWithArr:[arrIma subarrayWithRange:NSMakeRange(0, MIN(arrIma.count, 30))] arrSelected:self.arrSelected];
@@ -100,15 +95,17 @@
 #pragma mark - MHeadImaViewDelegate
 
 - (void)selectIndex:(NSUInteger)index headImaSelectType:(headImaSelectType)type {
-
+ NSArray *arrIma = [[MImaLibTool shareMImaLibTool] getAllAssetsWithGroup:[self.arrGroup firstObject]];
     if (type == headImaCheckMark) {
-        NSArray *arrIma = [[MImaLibTool shareMImaLibTool] getAllAssetsWithGroup:[self.arrGroup firstObject]];
+       
         [self.arrSelected addObject:arrIma[index]];
     } else if(type == headImaCheckCancel) {
-        [self.arrSelected removeObjectAtIndex:index];
+        NSArray *arrCheckmark = [[MImaLibTool shareMImaLibTool] checkMarkSameSetWithArr:self.arrSelected set:arrIma[index]];
+        if (arrCheckmark.count > 0) {
+            [self.arrSelected removeObject:[arrCheckmark firstObject]];
+        }
         
     } else {
-    NSArray *arrIma = [[MImaLibTool shareMImaLibTool] getAllAssetsWithGroup:[self.arrGroup firstObject]];
         MShowBigImaVc *bvc = [[MShowBigImaVc alloc] initWithArrData:arrIma selectedIma:self.arrSelected];
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:bvc];
         [self presentViewController:nav animated:YES completion:nil];

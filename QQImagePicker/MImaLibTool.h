@@ -19,4 +19,5 @@ typedef void (^arrBlock)(NSArray *arrObj);
 //- (void)getAllAssetsWithGroup:(ALAssetsGroup *)group finishBlock:(arrBlock)block;
 
 - (BOOL)imaInArrImasWithArr:(NSArray *)arrIma set:(ALAsset *)set;
+- (NSArray *)checkMarkSameSetWithArr:(NSArray *)arrSelected set:(ALAsset *)set;
 @end
