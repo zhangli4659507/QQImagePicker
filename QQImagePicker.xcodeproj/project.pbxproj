@@ -26,6 +26,7 @@
 		4DF2C0791BA2AC8900B361F8 /* MShowGroupAllSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2C0781BA2AC8900B361F8 /* MShowGroupAllSet.m */; };
 		4DF2C07D1BA2AEE400B361F8 /* MImaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2C07B1BA2AEE400B361F8 /* MImaCell.m */; };
 		4DF2C07E1BA2AEE400B361F8 /* MImaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DF2C07C1BA2AEE400B361F8 /* MImaCell.xib */; };
+		4DF2C0811BA2B76400B361F8 /* MShowBigImaVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2C0801BA2B76400B361F8 /* MShowBigImaVc.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		4DF2C07A1BA2AEE400B361F8 /* MImaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MImaCell.h; sourceTree = "<group>"; };
 		4DF2C07B1BA2AEE400B361F8 /* MImaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MImaCell.m; sourceTree = "<group>"; };
 		4DF2C07C1BA2AEE400B361F8 /* MImaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MImaCell.xib; sourceTree = "<group>"; };
+		4DF2C07F1BA2B76400B361F8 /* MShowBigImaVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MShowBigImaVc.h; sourceTree = "<group>"; };
+		4DF2C0801BA2B76400B361F8 /* MShowBigImaVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MShowBigImaVc.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				4DF2C0701BA2844300B361F8 /* MShowAllGroup.m */,
 				4DF2C0771BA2AC8900B361F8 /* MShowGroupAllSet.h */,
 				4DF2C0781BA2AC8900B361F8 /* MShowGroupAllSet.m */,
+				4DF2C07F1BA2B76400B361F8 /* MShowBigImaVc.h */,
+				4DF2C0801BA2B76400B361F8 /* MShowBigImaVc.m */,
 				4DF2C07A1BA2AEE400B361F8 /* MImaCell.h */,
 				4DF2C07B1BA2AEE400B361F8 /* MImaCell.m */,
 				4DF2C07C1BA2AEE400B361F8 /* MImaCell.xib */,
@@ -293,6 +298,7 @@
 				4DF2C0791BA2AC8900B361F8 /* MShowGroupAllSet.m in Sources */,
 				4D5792FD1BA17A8700A45D85 /* MHeadImaView.m in Sources */,
 				4D5792D71BA1726C00A45D85 /* ViewController.m in Sources */,
+				4DF2C0811BA2B76400B361F8 /* MShowBigImaVc.m in Sources */,
 				4DF2C0751BA285F100B361F8 /* MGroupCell.m in Sources */,
 				4D5792D41BA1726C00A45D85 /* AppDelegate.m in Sources */,
 				4D5792D11BA1726C00A45D85 /* main.m in Sources */,

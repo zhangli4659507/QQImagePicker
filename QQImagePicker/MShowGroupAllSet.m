@@ -9,6 +9,7 @@
 #import "MShowGroupAllSet.h"
 #import "MImaLibTool.h"
 #import "MImaCell.h"
+#import "MShowBigImaVc.h"
 @interface MShowGroupAllSet ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray *arrData;
@@ -17,12 +18,12 @@
 
 @implementation MShowGroupAllSet
 
-- (id)initWithGroup:(ALAssetsGroup *)group selectedArr:(NSArray *)arrSelected {
+- (id)initWithGroup:(ALAssetsGroup *)group selectedArr:(NSMutableArray *)arrSelected {
 
     if (self = [super init]) {
         self.title = [group valueForProperty:ALAssetsGroupPropertyName];
         self.arrData = [[MImaLibTool shareMImaLibTool] getAllAssetsWithGroup:group];
-        self.arrSelected = [NSMutableArray arrayWithArray:arrSelected];
+        self.arrSelected = arrSelected;
     }
     return self;
 }
@@ -69,7 +70,29 @@
     MImaCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MImaCellClassName forIndexPath:indexPath];
     ALAsset *set = self.arrData[indexPath.row];
     cell.imavHead.image = [UIImage imageWithCGImage:set.thumbnail];
+    cell.btnCheckMark.selected = [[MImaLibTool shareMImaLibTool] imaInArrImasWithArr:self.arrSelected set:set];
+    [cell setBtnSelectedHandle:^(BOOL state) {
+        
+        if (state) {
+            [self.arrSelected addObject:set];
+        } else {
+            NSPredicate *pre = [NSPredicate predicateWithFormat:@" SELF.defaultRepresentation.UTI == %@",set.defaultRepresentation.UTI];
+            NSArray *arr = [self.arrSelected filteredArrayUsingPredicate:pre];
+            if (arr.count > 0) {
+                [self.arrSelected removeObject:[arr firstObject]];
+            }
+        }
+        
+    }];
     return cell;
+    
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+
+    MShowBigImaVc *bvc = [[MShowBigImaVc alloc] initWithArrData:self.arrData selectedIma:self.arrSelected];
+    
+    [self.navigationController pushViewController:bvc animated:YES];
     
 }
 

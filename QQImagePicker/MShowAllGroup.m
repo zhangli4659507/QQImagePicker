@@ -12,14 +12,14 @@
 #import "MImaLibTool.h"
 #import "MShowGroupAllSet.h"
 @interface MShowAllGroup ()<UITableViewDataSource,UITableViewDelegate>
-@property (nonatomic, strong) NSArray *arrSeleted;
+@property (nonatomic, strong) NSMutableArray *arrSeleted;
 @property (nonatomic, strong) NSArray *arrGroup;
 @property (nonatomic, strong) UITableView *tableView;
 @end
 
 @implementation MShowAllGroup
 
-- (id)initWithArrGroup:(NSArray *)arrGroup arrSelected:(NSArray *)arr {
+- (id)initWithArrGroup:(NSArray *)arrGroup arrSelected:(NSMutableArray *)arr {
 
     if (self = [super init]) {
         

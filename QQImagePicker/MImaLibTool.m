@@ -28,6 +28,16 @@
 }
 
 
+- (BOOL)imaInArrImasWithArr:(NSArray *)arrIma set:(ALAsset *)set {
+
+    
+   
+    NSPredicate *pre = [NSPredicate predicateWithFormat:@" SELF.defaultRepresentation.url.absoluteString == %@",set.defaultRepresentation.url.absoluteString];
+    NSArray *arr = [arrIma filteredArrayUsingPredicate:pre];
+//    NSString *uti = set.defaultRepresentation.UTI;
+//    NSString *UTI = [[[arrIma lastObject] defaultRepresentation] UTI];
+    return arr.count > 0;
+}
 
 - (void)getAllGroupWithArrObj:(arrBlock)block {
 

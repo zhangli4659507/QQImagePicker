@@ -16,5 +16,7 @@ typedef void (^arrBlock)(NSArray *arrObj);
 
 - (void)getAllGroupWithArrObj:(arrBlock)block;
 - (NSArray *)getAllAssetsWithGroup:(ALAssetsGroup *)group;
-- (void)getAllAssetsWithGroup:(ALAssetsGroup *)group finishBlock:(arrBlock)block;
+//- (void)getAllAssetsWithGroup:(ALAssetsGroup *)group finishBlock:(arrBlock)block;
+
+- (BOOL)imaInArrImasWithArr:(NSArray *)arrIma set:(ALAsset *)set;
 @end

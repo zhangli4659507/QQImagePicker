@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MShowAllGroup : UIViewController
-- (id)initWithArrGroup:(NSArray *)arrGroup arrSelected:(NSArray *)arrSelected;
+- (id)initWithArrGroup:(NSArray *)arrGroup arrSelected:(NSMutableArray *)arrSelected;
 @end

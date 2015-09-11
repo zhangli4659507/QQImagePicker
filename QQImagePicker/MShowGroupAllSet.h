@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 @interface MShowGroupAllSet : UIViewController
-- (id)initWithGroup:(ALAssetsGroup *)group selectedArr:(NSArray *)arrSelected;
+- (id)initWithGroup:(ALAssetsGroup *)group selectedArr:(NSMutableArray *)arrSelected;
 @end

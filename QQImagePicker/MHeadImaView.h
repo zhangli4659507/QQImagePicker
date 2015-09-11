@@ -25,5 +25,5 @@ typedef enum {
 @interface MHeadImaView : UIView
 
 @property (nonatomic, weak) id<MHeadImaViewDelegate> delegate;
-- (void)reloadDataWithArr:(NSArray *)arrData;
+- (void)reloadDataWithArr:(NSArray *)arrData arrSelected:(NSMutableArray *)arrSelected;
 @end

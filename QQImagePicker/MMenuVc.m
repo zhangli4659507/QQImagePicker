@@ -10,6 +10,7 @@
 #import "MHeadImaView.h"
 #import "MImaLibTool.h"
 #import "MShowAllGroup.h"
+#import "MShowBigImaVc.h"
 @interface MMenuVc ()<UITableViewDataSource,UITableViewDelegate,MHeadImaViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *arrTitles;
@@ -57,6 +58,10 @@
 - (void)viewDidAppear:(BOOL)animated {
 
     [super viewDidAppear:animated];
+    if (self.arrGroup && self.arrGroup.count > 0) {
+        
+        [self setupTableHeaderView];
+    }
 }
 
 #pragma mark - public
@@ -70,9 +75,14 @@
     
  
       NSArray *arrIma = [[MImaLibTool shareMImaLibTool] getAllAssetsWithGroup:[self.arrGroup firstObject]];
+    
+    for (ALAsset *set in arrIma) {
+        NSLog(@"UTI = %@",set.defaultRepresentation.url.absoluteString);
+    }
+    
       if (arrIma.count > 0) {
           MHeadImaView *headView = [[MHeadImaView alloc] initWithFrame:CGRectMake(0, 9, CGRectGetWidth(self.view.bounds), 200)];
-          [headView reloadDataWithArr:[arrIma subarrayWithRange:NSMakeRange(0, MIN(arrIma.count, 30))]];
+          [headView reloadDataWithArr:[arrIma subarrayWithRange:NSMakeRange(0, MIN(arrIma.count, 30))] arrSelected:self.arrSelected];
           headView.delegate = self;
           self.tableView.tableHeaderView = headView;
       }
@@ -91,7 +101,20 @@
 
 - (void)selectIndex:(NSUInteger)index headImaSelectType:(headImaSelectType)type {
 
-    
+    if (type == headImaCheckMark) {
+        NSArray *arrIma = [[MImaLibTool shareMImaLibTool] getAllAssetsWithGroup:[self.arrGroup firstObject]];
+        [self.arrSelected addObject:arrIma[index]];
+    } else if(type == headImaCheckCancel) {
+        [self.arrSelected removeObjectAtIndex:index];
+        
+    } else {
+    NSArray *arrIma = [[MImaLibTool shareMImaLibTool] getAllAssetsWithGroup:[self.arrGroup firstObject]];
+        MShowBigImaVc *bvc = [[MShowBigImaVc alloc] initWithArrData:arrIma selectedIma:self.arrSelected];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:bvc];
+        [self presentViewController:nav animated:YES completion:nil];
+        
+    }
+     
 }
 
 #pragma mark -  tableViewDelegate

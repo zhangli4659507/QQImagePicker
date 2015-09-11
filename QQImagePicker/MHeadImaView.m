@@ -9,6 +9,7 @@
 #import "MHeadImaView.h"
 #import "MFlowLayOut.h"
 #import "MHeaderImaCell.h"
+#import "MImaLibTool.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 @interface MHeadImaView () <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -36,13 +37,14 @@
         self.collectionView.showsVerticalScrollIndicator = NO;
         [self addSubview:self.collectionView];
         [self.collectionView registerClass:[MHeaderImaCell class] forCellWithReuseIdentifier:MHeaderImaCellClassName];
-        self.arrSelected = [NSMutableArray array];
+       
     }
     return self;
 }
 
-- (void)reloadDataWithArr:(NSArray *)arrData {
+- (void)reloadDataWithArr:(NSArray *)arrData arrSelected:(NSMutableArray *)arrSelected{
 
+    self.arrSelected = arrSelected;
     self.arrData = arrData;
     [self.collectionView.collectionViewLayout invalidateLayout];
     [self.collectionView reloadData];
@@ -73,7 +75,7 @@
     ALAsset *set = self.arrData[indexPath.row];
     ALAssetRepresentation *sentation = [set defaultRepresentation];
     cell.imavHead.image = [UIImage imageWithCGImage:[sentation fullScreenImage]];
-    
+    cell.btnCheckMark.selected = [[MImaLibTool shareMImaLibTool] imaInArrImasWithArr:self.arrSelected set:set];
     __weak typeof(self) weakSelf = self;
     [cell setBtnSelectedActionBlock:^(BOOL state) {
         
