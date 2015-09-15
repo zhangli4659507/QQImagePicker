@@ -11,7 +11,7 @@
 #import "MImaLibTool.h"
 #import "MShowAllGroup.h"
 #import "MShowBigImaVc.h"
-@interface MMenuVc ()<UITableViewDataSource,UITableViewDelegate,MHeadImaViewDelegate>
+@interface MMenuVc ()<UITableViewDataSource,UITableViewDelegate,MHeadImaViewDelegate,UIImagePickerControllerDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *arrTitles;
 @property (nonatomic, copy) menuSelectBlock menuBlock;
@@ -119,6 +119,13 @@
     
     if (indexPath.row == 0) {
         
+        UIImagePickerController *imaPic = [[UIImagePickerController alloc] init];
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            imaPic.sourceType = UIImagePickerControllerSourceTypeCamera;
+            imaPic.delegate = self;
+            [self presentViewController:imaPic animated:nil completion:nil];
+        }
+        
     } else if ( indexPath.row == 1 && self.arrGroup.count > 0) {
     MShowAllGroup *svc = [[MShowAllGroup alloc] initWithArrGroup:self.arrGroup arrSelected:self.arrSelected];
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:svc];
@@ -152,6 +159,18 @@
     
     
     return cell;
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+
+    UIImage *ima = info[UIImagePickerControllerOriginalImage];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
